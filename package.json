@@ -1,0 +1,60 @@
+{
+  "name": "reducer-manager",
+  "version": "0.1.0",
+  "description": "Modularize Redux by dynamically loading reducers.",
+  "main": "dist/reducer-manager.cjs.js",
+  "module": "dist/reducer-manager.esm.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanilla-IceCream/reducer-manager.git"
+  },
+  "keywords": [
+    "Redux",
+    "Modular",
+    "Code",
+    "Splitting"
+  ],
+  "author": "Vanilla IceCream",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vanilla-IceCream/reducer-manager/issues"
+  },
+  "homepage": "https://github.com/Vanilla-IceCream/reducer-manager#readme",
+  "peerDependencies": {
+    "prop-types": ">= 15",
+    "react": ">= 16.8 < 17",
+    "react-redux": ">= 7 < 8"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.6.0",
+    "@testing-library/react": "^9.1.4",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
