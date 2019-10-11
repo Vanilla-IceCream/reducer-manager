@@ -1,9 +1,9 @@
 {
-  "name": "reducer-manager",
+  "name": "redux-dynamic-manager",
   "version": "0.1.0",
   "description": "Modularize Redux by dynamically loading reducers.",
-  "main": "dist/reducer-manager.cjs.js",
-  "module": "dist/reducer-manager.esm.js",
+  "main": "dist/redux-dynamic-manager.cjs.js",
+  "module": "dist/redux-dynamic-manager.esm.js",
   "files": [
     "src",
     "dist"
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vanilla-IceCream/reducer-manager.git"
+    "url": "git+https://github.com/Vanilla-IceCream/redux-dynamic-manager.git"
   },
   "keywords": [
     "Redux",
@@ -26,15 +26,18 @@
   "author": "Vanilla IceCream",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Vanilla-IceCream/reducer-manager/issues"
+    "url": "https://github.com/Vanilla-IceCream/redux-dynamic-manager/issues"
   },
-  "homepage": "https://github.com/Vanilla-IceCream/reducer-manager#readme",
+  "homepage": "https://github.com/Vanilla-IceCream/redux-dynamic-manager#readme",
   "peerDependencies": {
     "prop-types": ">= 15",
     "react": ">= 16.8 < 17",
-    "react-redux": ">= 7 < 8"
+    "react-redux": ">= 7 < 8",
+    "redux": ">= 4 < 5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "global": "^4.4.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
