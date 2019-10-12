@@ -20,9 +20,9 @@ import { createReducerManager, bindReducerManager, dynamic } from 'redux-dynamic
 
 ## Getting Started
 
-```js
-// store.js
+### Configure Store
 
+```js
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createReducerManager, bindReducerManager, dynamic } from 'redux-dynamic-manager';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
@@ -56,6 +56,14 @@ export const configureStore = () => {
 };
 ```
 
+### Load Component
+
+```js
+import React from 'react';
+
+const HelloWorld = React.lazy(() => import('./HelloWorld'));
+```
+
 ```js
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -80,4 +88,60 @@ const HelloWorld = () => {
 };
 
 export default dynamic('helloWorld', reducer)(HelloWorld);
+
+// before:
+// {
+//   "app": ...,
+//   "router": ...
+// }
+
+// after:
+// {
+//   "app": ...,
+//   "router": ...,
+//   "helloWorld": ...
+// }
+```
+
+Nested modules:
+
+```js
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { dynamic } from 'redux-dynamic-manager';
+import styled from '@emotion/styled';
+
+import reducer from './reducer';
+
+const Title = styled('h1')`
+  color: #222222;
+`;
+
+const HelloWorld = () => {
+  const [world] = useState('World');
+  const { hello } = useSelector(state => state.helloWorld);
+
+  return (
+    <div id="hello-world">
+      <Title>{hello}, {world}!</Title>
+    </div>
+  );
+};
+
+export default dynamic(['hello', 'world'], reducer)(HelloWorld);
+
+// before:
+// {
+//   "app": ...,
+//   "router": ...
+// }
+
+// after:
+// {
+//   "app": ...,
+//   "router": ...,
+//   "hello": {
+//     "world": ...
+//   }
+// }
 ```

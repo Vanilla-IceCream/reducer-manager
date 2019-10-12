@@ -29,9 +29,6 @@ var createReducerManager = function createReducerManager(initialReducers) {
   var combinedReducer = combineReducers(reducers);
   var keysToRemove = [];
   return {
-    getReducerMap: function getReducerMap() {
-      return reducers;
-    },
     reduce: function reduce(state, action) {
       if (keysToRemove.length > 0) {
         state = _objectSpread({}, state);

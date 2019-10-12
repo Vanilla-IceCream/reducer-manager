@@ -1,6 +1,6 @@
 {
   "name": "redux-dynamic-manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modularize Redux by dynamically loading reducers.",
   "main": "dist/redux-dynamic-manager.cjs.js",
   "module": "dist/redux-dynamic-manager.esm.js",
